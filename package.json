@@ -1,0 +1,19 @@
+{
+  "name": "koa2",
+  "version": "1.0.0",
+  "description": "this is a demo",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node koa_demo.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.12.0",
+    "koa-router": "7.0.0"
+  }
+}

@@ -1,0 +1,1 @@
+1. 注意package.json中的script属性
