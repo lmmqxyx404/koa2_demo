@@ -8,11 +8,11 @@ let fn_index = async (ctx, next) => {
 }
 
 let fn_signin = async (ctx, next) => {
-  let name = ctx.response.body.name;
-  let password = ctx.response.body.password
+  let name = ctx.request.body.name;
+  let password = ctx.request.body.password
   let hour = new Date().getMinutes()
   console.log(`signin with name: ${name}  password: ${password} time: ${hour}`)
-  if (name === 'admin' && password === '12345') {
+  if (name === 'admin' && password === '123456') {
     ctx.response.body = `<h1>Success this is your homepage--${name}</h1>`
   }
   else {
@@ -23,7 +23,10 @@ let fn_signin = async (ctx, next) => {
 
 let fn_test = async (ctx, next) => {
   let received = ctx.params.name
-  ctx.response.body = `<h1>url is test parameters is ${received}</h1>`
+  ctx.response.body = {
+    name: received,
+    url: ctx.request.url
+  }
 }
 
 module.exports = {
