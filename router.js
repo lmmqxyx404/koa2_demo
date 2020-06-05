@@ -4,6 +4,8 @@ const Koa = require('koa')
 const router = require('koa-router')();
 const app = new Koa()
 
+
+app.use(router.routes())
 app.use(async (ctx, next) => {
   console.log(`${ctx.request.method}++${ctx.request.url}`);
   await next();
@@ -19,7 +21,7 @@ router.get('/', async (ctx, next) => {
   ctx.response.body = `<h1>Hello ${name}</h1>`
 })
 
-app.use(router.routes())
+
 app.use(async (ctx, next) => {
   const start = new Date().getTime()
   await next()
